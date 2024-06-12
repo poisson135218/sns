@@ -38,6 +38,8 @@ Route::get('/', function() {
 
 Route::get('/', [PostController::class, 'index']);
 
+Route::get('/posts/criate', [PostController::class , 'create']);
+
 Route::get('/posts/{post}', [PostController::class ,'show']);
 
 require __DIR__.'/auth.php';
