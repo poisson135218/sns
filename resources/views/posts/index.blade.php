@@ -8,7 +8,7 @@
     </head>
     <body>
         <h1>Title</h1>
-        <a herf="/posts/criate">create</a>
+        <a href='/posts/create'>create</a>
         <div class='posts'>
             @foreach ($posts as $post)
                 <div class='post'>
