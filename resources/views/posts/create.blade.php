@@ -9,7 +9,7 @@
     <body>
         <h1>post name</h1>
         <form action="/posts" method="POST">
-            @crsf
+            @csrf
             <div class="body">
                 <h2>投稿内容</h2>
                 <textarea name="post[body]" placeholder="このプレイリストを見てください。"></textarea>
