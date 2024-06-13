@@ -17,7 +17,7 @@ class PostSeeder extends Seeder
     public function run()
     {
         DB::table('posts')->insert([
-                'body' => '命名はデータを基準に考える',
+                'body' => 'これはダミーデータです。',
                 'created_at' => new DateTime(),
                 'user_id' => '1',
                 'updated_at' => new DateTime(),
