@@ -22,10 +22,16 @@ class PostController extends Controller
     }
     
     public function store(Request $request, Post $post)
-{
-    $input = $request['posts'];
+    {
+    $input = $request['post'];
     $post->fill($input)->save();
     return redirect('/posts/' . $post->id);
+        
+    }
+    public function delete(Post $post)
+    {
+    $post->delete();
+    return redirect('/');
+        
+    }
 }
-}
-    
