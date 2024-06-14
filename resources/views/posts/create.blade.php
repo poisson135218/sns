@@ -10,7 +10,7 @@
     <x-slot name="create">
     </x-slot>
     <body>
-        <h1>post name</h1>
+        <h1>post</h1>
         <form action="/posts" method="POST">
             @csrf
             <div class="body">

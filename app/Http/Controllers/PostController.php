@@ -35,6 +35,10 @@ class PostController extends Controller
     {
     $post->delete();
     return redirect('/');
-        
+    }
+    
+    public function construct()
+    {
+    $this->middleware(['auth', 'verified'])->only(['like', 'unlike']);
     }
 }
