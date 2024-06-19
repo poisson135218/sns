@@ -6,7 +6,6 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
-        <a href='register'>新規ユーザー登録</a>
 
 
         <!-- Fonts -->

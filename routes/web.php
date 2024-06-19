@@ -24,16 +24,17 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/', [PostController::class, 'index'])->name('index');
+
 Route::controller(PostController::class)->middleware(['auth'])->group(function(){
-    Route::get('/', 'index')->name('index');
     Route::post('/posts', 'store')->name('store');
     Route::get('/posts/create', 'create')->name('create');
     Route::get('/posts/{post}', 'show')->name('show');
     Route::put('/posts/{post}', 'update')->name('update');
     Route::delete('/posts/{post}', 'delete')->name('delete');
     Route::get('/posts/{post}/edit', 'edit')->name('edit');
-    Route::get('/posts/like/{id}', 'like')->name('like');
-    Route::get('/posts/unlike/{id}', 'unlike')->name('unlike');
+    Route::get('/posts/like/{id}', 'like')->name('post.like');
+    Route::get('/posts/unlike/{id}', 'unlike')->name('post.unlike');
 });
 
 Route::middleware('auth')->group(function () {
