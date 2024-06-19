@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\FollowController;
 
 
 /*
@@ -42,5 +43,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/profile/{id}',[ProfileController::class,'get_user']);
+Route::get('/follow/status/{id}',[FollowController::class,'check_following']);
+Route::post('/follow/add',[FollowController::class,'following']);
+Route::post('/follow/remove',[FollowController::class,'unfollowing']);
+
 
 require __DIR__.'/auth.php';
