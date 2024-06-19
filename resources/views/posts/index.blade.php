@@ -6,9 +6,6 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
-    <x-app-layout>
-    <x-slot name="index">
-    </x-slot>
     <body>
         <h1>Title</h1>
         <a href='/posts/create'>Postする</a>
@@ -33,6 +30,7 @@
                     }
                 }
             </script>
+            <a href="/register">新規ユーザー登録</a>
+            <a href="/login">ログイン</a>
     </body>
-    </x-app-layout>
 </html>

@@ -9,13 +9,7 @@
     <body>
         <h1 class='title'>
             {{ $post->title }}
-        <div class='content'>
-            <div class='content_post'>
-                <h3>本文</h3>
-                <p class='body'>{{ $post->body }}</p>
-            </div>
-        </div>
-        <div>
+            <div>
             @if($post->is_liked_by_auth_user())
             <a href="{{ route('post.unlike', ['id' => $post->id]) }}" class="btn btn-success btn-sm">いいね<span class="badge">{{ $post->likes->count() }}</span></a>
             @else
@@ -23,6 +17,12 @@
             @endif
         </div>
         {{ $post->likes->count() }}
+        <div class='content'>
+            <div class='content_post'>
+                <h3>本文</h3>
+                <p class='body'>{{ $post->body }}</p>
+            </div>
+        </div>
         <div class='footer'>
             <a href="/">戻る</a>
         </div>
