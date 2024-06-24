@@ -15,7 +15,7 @@
             @csrf
             <div class="body">
                 <h2>投稿内容</h2>
-                <textarea name="post[body]" placeholder="このプレイリストを見てください。"></textarea>
+                <textarea name="post[body]" placeholder="こんにちは"></textarea>
             </div>
             <input type="submit" value="投稿する">
             </input>

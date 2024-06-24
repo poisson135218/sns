@@ -36,6 +36,7 @@ Route::controller(PostController::class)->middleware(['auth'])->group(function()
     Route::get('/posts/{post}/edit', 'edit')->name('edit');
     Route::get('/posts/like/{id}', 'like')->name('post.like');
     Route::get('/posts/unlike/{id}', 'unlike')->name('post.unlike');
+    Route::get('/posts/likeposts','like')->name('likeposts');
 });
 
 Route::middleware('auth')->group(function () {
