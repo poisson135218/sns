@@ -5,7 +5,6 @@
         <title>SNS</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link rel="stylesheet" href="/sns/resources/views/posts/show.css">
     </head>
     <body>
         <h1 class='title'>

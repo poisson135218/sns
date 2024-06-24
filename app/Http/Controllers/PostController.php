@@ -31,27 +31,34 @@ class PostController extends Controller
     $post->fill($input)->save();
     return redirect('/posts/' . $post->id);
     }
-    
+
     public function delete(Post $post)
     {
     $post->delete();
     return redirect('/');
     }
     
-     public function __construct()
+    public function __construct()
     {
     $this->middleware(['auth', 'verified'])->only(['like', 'unlike']);
     }
     
-     public function like($id)
+    public function likeposts($id)
+    {
+    return view('posts.like');
+    
+    Like::where('user_id', '=', Auth::id())->get();
+        
+    }
+    
+    
+    public function like($id)
     {
     Like::create([
       'post_id' => $id,
       'user_id' => Auth::id(),
     ]);
-    
     session()->flash('success', 'You Liked the Reply.');
-
     return redirect()->back();
     }
     
