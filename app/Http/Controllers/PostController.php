@@ -43,12 +43,13 @@ class PostController extends Controller
     $this->middleware(['auth', 'verified'])->only(['like', 'unlike']);
     }
     
-    public function likeposts($id)
+    public function likeposts(Post $post)
     {
-    return view('posts.like');
     
-    Like::where('user_id', '=', Auth::id())->get();
-        
+    $post=Like::where('user_id', '=', Auth::id())->get()->post()->get();
+    
+    return view('posts.like')->with(['post' => $post]);
+    
     }
     
     
