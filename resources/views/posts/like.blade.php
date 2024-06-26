@@ -10,8 +10,6 @@
     <x-slot name="likeposts"></x-slot>
     <body>
         <h1>いいねした投稿</h1>
-        <form  method="GET" action="/posts/likeposts"> 
-        </form>
     </body>
     </x-app-layout>
 </html>

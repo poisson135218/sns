@@ -27,6 +27,8 @@ Route::get('/dashboard', function () {
 
 Route::get('/', [PostController::class, 'index'])->name('index');
 
+Route::get('/posts/likeposts', [PostController::class, 'likeposts'])->name('likeposts');
+
 Route::controller(PostController::class)->middleware(['auth'])->group(function(){
     Route::post('/posts', 'store')->name('store');
     Route::get('/posts/create', 'create')->name('create');
@@ -36,7 +38,6 @@ Route::controller(PostController::class)->middleware(['auth'])->group(function()
     Route::get('/posts/{post}/edit', 'edit')->name('edit');
     Route::get('/posts/like/{id}', 'like')->name('post.like');
     Route::get('/posts/unlike/{id}', 'unlike')->name('post.unlike');
-    Route::get('/posts/likeposts','like')->name('likeposts');
 });
 
 Route::middleware('auth')->group(function () {
