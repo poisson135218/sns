@@ -1,7 +1,5 @@
 {
-    "regions": [
-        "hnd1"
-    ],
+    "version": 2,
     "builds": [
         {
             "src": "api/index.php",
@@ -17,18 +15,6 @@
             "src": "/(.*)",
             "dest": "/api/index.php"
         },
-        {
-            "src": "/favicon.ico",
-            "dest": "/public/favicon.ico"
-        },
-        {
-            "src": "/robots.txt",
-            "dest": "/public/robots.txt"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/api/index.php"
-        }
     ],
     "env": {
         "APP_NAME": "Laravel Vercel",
