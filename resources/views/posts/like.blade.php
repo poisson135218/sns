@@ -10,6 +10,14 @@
     <x-slot name="likeposts"></x-slot>
     <body>
         <h1>いいねした投稿</h1>
+        <div class='post'>
+         @foreach($post as $post)
+            <div class='post'>
+                <h2 class='title'>{{ $post->title}}</h2>
+                <p class='body'>{{ $post->body}}</p>
+            </div>
+            @endforeach
+        </div>
     </body>
     </x-app-layout>
 </html>
