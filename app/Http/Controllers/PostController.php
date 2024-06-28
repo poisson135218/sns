@@ -46,7 +46,7 @@ class PostController extends Controller
     public function likeposts(Post $post)
     {
     
-    $post=Like::where('user_id', '=', Auth::id())->get()->post()->get();
+    $post = Post::whereIn('id', Like::select('post_id')->where('user_id', Auth::id()))->get();
     
     return view('posts.like')->with(['post' => $post]);
     
